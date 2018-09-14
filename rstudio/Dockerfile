@@ -10,7 +10,7 @@
 #
 
 # Base docker image
-FROM debian:jessie
+FROM debian:jessie-slim
 LABEL maintainer "Jessie Frazelle <jess@linux.com>"
 
 # Install Rstudio deps
@@ -50,7 +50,7 @@ RUN apt-get update && apt-get install -y \
 	&& rm -rf /var/lib/apt/lists/*
 
 # https://www.rstudio.com/products/rstudio/download/#download
-ENV RSTUDIO_VERSION 1.1.453
+ENV RSTUDIO_VERSION 1.1.456
 
 # Download the source
 RUN buildDeps=' \
