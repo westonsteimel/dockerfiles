@@ -19,6 +19,11 @@ RUN apt-get update && apt-get install -y \
 
 ENV LANG en-US
 
+RUN groupadd -r firefox && useradd -m -g firefox -G audio,video firefox \
+    && chown -R firefox:firefox /home/firefox
+
 COPY local.conf /etc/fonts/local.conf
+
+USER firefox
 
 ENTRYPOINT [ "/usr/bin/firefox" ]
