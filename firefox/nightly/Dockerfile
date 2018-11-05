@@ -36,8 +36,7 @@ COPY local.conf /etc/fonts/local.conf
 COPY firefox.desktop /usr/share/applications/firefox.desktop
 
 RUN mkdir -p /etc/firefox && \  
-    echo 'pref("browser.tabs.remote.autostart", false);' >> /etc/firefox/syspref.js && \
-    echo 'pref("app.update.enabled", false);' >> /etc/firefox/syspref.js
+    echo 'pref("browser.tabs.remote.autostart", false);' >> /etc/firefox/syspref.js
 
 COPY entrypoint.sh /usr/bin/startfirefox
 
