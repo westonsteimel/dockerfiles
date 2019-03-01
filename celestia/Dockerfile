@@ -1,33 +1,31 @@
-FROM westonsteimel/debian:sid-slim
+FROM westonsteimel/alpine-glibc:edge
 
-RUN apt-get update -y \
-    && apt-get install -y \
+RUN apk upgrade && apk --no-cache add --virtual .build-dependencies \
     cmake \
     make \
     g++ \
-    libglew-dev \
-    libjpeg-dev \
+    git \
+    && apk --no-cache add \
+    glew-dev \
+    jpeg-dev \
     libpng-dev \
     libtheora-dev \
-    libgl1-mesa-dev \
-    libglu1-mesa-dev \
-    libgtk2.0-dev \
-    libgtkglext1-dev \
-    liblua5.3-dev \
-    git \
+    mesa-gl \
+    mesa-dri-intel \
+    gtk+2.0-dev \
+    gtkglext-dev \
+    lua5.3-dev \
+    lua-dev \
     ca-certificates \
-    --no-install-recommends
-
-RUN git clone --depth 1 --recurse-submodules https://github.com/CelestiaProject/celestia
-
-RUN cd celestia \
+    ttf-dejavu \
+    && git clone --depth 1 --recurse-submodules https://github.com/CelestiaProject/celestia \
+    && cd celestia \
 	&& cmake . -DENABLE_GTK=ON -DENABLE_QT=OFF \
 	&& make \
     && make install \
-    && apt-get autoremove -y \
-    && apt-get autoclean -y \
-    && apt-get clean -y \
+    && cd .. \
     && rm -rf celestia \
-    && rm -rf /var/lib/apt/lists/*
+    && apk del .build-dependencies \
+    && rm -rf /var/cache/*
 
 ENTRYPOINT ["celestia-gtk"]
