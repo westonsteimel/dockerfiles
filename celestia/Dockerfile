@@ -1,4 +1,4 @@
-FROM westonsteimel/alpine-glibc:edge
+FROM alpine:edge
 
 RUN apk upgrade && apk --no-cache add --virtual .build-dependencies \
     cmake \
@@ -12,15 +12,17 @@ RUN apk upgrade && apk --no-cache add --virtual .build-dependencies \
     libtheora-dev \
     mesa-gl \
     mesa-dri-intel \
-    gtk+2.0-dev \
-    gtkglext-dev \
+    eigen-dev \
+    qt5-qtbase-dev \
+    qt5-qttools-dev \
+    qt5-qtlocation \
     lua5.3-dev \
     lua-dev \
     ca-certificates \
     ttf-dejavu \
-    && git clone --depth 1 --recurse-submodules https://github.com/CelestiaProject/celestia \
+    && git clone --branch fix-qt-errors --depth 1 --recurse-submodules https://github.com/westonsteimel/celestia \
     && cd celestia \
-	&& cmake . -DENABLE_GTK=ON -DENABLE_QT=OFF \
+	&& cmake . -DENABLE_GTK=OFF -DENABLE_QT=ON \
 	&& make \
     && make install \
     && cd .. \
@@ -28,4 +30,4 @@ RUN apk upgrade && apk --no-cache add --virtual .build-dependencies \
     && apk del .build-dependencies \
     && rm -rf /var/cache/*
 
-ENTRYPOINT ["celestia-gtk"]
+ENTRYPOINT ["celestia-qt"]
