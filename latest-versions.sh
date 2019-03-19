@@ -123,6 +123,9 @@ wireguard/wireguard
 OJ/gobuster
 OWASP/amass
 gohugoio/hugo
+keybase/client
+stellarium/stellarium
+celestiaproject/celestia
 )
 
 other_projects=(
