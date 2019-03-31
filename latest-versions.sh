@@ -105,16 +105,12 @@ projects=(
 iovisor/bcc
 browsh-org/browsh
 certbot/certbot
-cloudflare/cfssl
 hashicorp/consul
 curl/curl
-irssi/irssi
-cryptodotis/irssi-otr
 keepassxreboot/keepassxc
 robertdavidgraham/masscan
 mitmproxy/mitmproxy
 hashicorp/nomad
-zeit/now-cli
 hashicorp/packer
 hashicorp/terraform
 hashicorp/vagrant
@@ -129,7 +125,6 @@ celestiaproject/celestia
 )
 
 other_projects=(
-unifi
 )
 
 bad_versions=()
