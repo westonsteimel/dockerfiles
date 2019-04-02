@@ -68,7 +68,7 @@ RUN apk upgrade && apk --no-cache add \
     ca-certificates \
     ttf-dejavu \
     && addgroup -g 1000 celestia \
-    && adduser -u 1000 -G celestia -s /bin/sh -D celestia \
+    && adduser -u 1000 -G celestia -s /bin/sh -D celestia
     
 USER celestia
 
