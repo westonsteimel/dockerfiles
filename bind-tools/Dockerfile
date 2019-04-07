@@ -1,7 +1,7 @@
-FROM alpine:latest
+FROM alpine:edge
 
-RUN apk --no-cache upgrade \ 
-    && apk add --no-cache \
+RUN apk upgrade && apk --no-cache add \
 	bind-tools
+
 
 CMD ["/bin/sh"]
