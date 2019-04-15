@@ -122,6 +122,7 @@ gohugoio/hugo
 keybase/client
 stellarium/stellarium
 celestiaproject/celestia
+ytdl-org/youtube-dl
 )
 
 other_projects=(
