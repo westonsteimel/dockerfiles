@@ -1,9 +1,8 @@
 ## dockerfiles
 
-[![Travis CI](https://img.shields.io/travis/jessfraz/dockerfiles.svg?style=for-the-badge)](https://travis-ci.org/jessfraz/dockerfiles)
-
-This is a repo to hold various Dockerfiles for images I create.
-
+This repo was started from the excellent work of [@jessfraz](https://github.com/jessfraz) 
+at [jessfraz/dockerfiles](https://github.com/jessfraz/dockerfiles).  It holds various dockerfiles 
+for tools I find useful.
 
 **Table of Contents**
 
@@ -19,23 +18,24 @@ This is a repo to hold various Dockerfiles for images I create.
 
 ## About
 
-Almost all of these live on dockerhub under [jess](https://hub.docker.com/u/jess/).
-Because you cannot use notary with autobuilds on dockerhub I also build these
-continuously on a private registry at [r.j3ss.co](https://r.j3ss.co/) for public download. (You're
-welcome.)
+The ones I've added or customised live on dockerhub under [westonsteimel](https://hub.docker.com/u/westonsteimel).  
+Any others which I haven't yet made any changes to probably still live under [jess](https://hub.docker.com/u/jess/) or 
+[r.j3ss.co](https://r.j3ss.co/).
 
 ## Resources
 
 ### My dotfiles
 
-You may also want to checkout my [dotfiles](https://github.com/jessfraz/dotfiles), specifically the aliases for all these files which are here: [github.com/jessfraz/dotfiles/blob/master/.dockerfunc](https://github.com/jessfraz/dotfiles/blob/master/.dockerfunc).
+You might potentially find my [dotfiles](https://github.com/westonsteimel/dotfiles) to be useful.  Most of the commands 
+for launching the tools I use as docker containers live under [bin/](https://github.com/westonsteimel/dotfiles/blob/master/bin/).
+
+These were also inspired by [@jessfraz](https://github.com/jessfraz) [dotfiles](https://github.com/jessfraz/dotfiles)
 
 ## Contributing
 
 I try to make sure each Dockerfile has a command at the top to document running it,
 if a file you are looking at does not have a command, please
 pull request it!
-
 
 ### Using the `Makefile`
 
