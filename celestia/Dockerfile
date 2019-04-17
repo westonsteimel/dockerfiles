@@ -17,6 +17,8 @@
 
 FROM alpine:edge AS builder
 
+ENV CELESTIA_VERSION master
+
 RUN apk upgrade && apk --no-cache add --virtual .build-dependencies \
     cmake \
     make \
@@ -37,7 +39,7 @@ RUN apk upgrade && apk --no-cache add --virtual .build-dependencies \
     lua-dev \
     ca-certificates \
     ttf-dejavu \
-    && git clone --branch fix-qt-errors --depth 1 --recurse-submodules https://github.com/westonsteimel/celestia \
+    && git clone --branch ${CELESTIA_VERSION} --depth 1 --recurse-submodules https://github.com/CelestiaProject/celestia \
     && cd celestia \
 	&& cmake . -DENABLE_GTK=OFF -DENABLE_QT=ON \
 	&& make \
