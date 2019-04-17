@@ -1,8 +1,7 @@
 ## dockerfiles
 
-This repo was started from the excellent work of [@jessfraz](https://github.com/jessfraz) 
-at [jessfraz/dockerfiles](https://github.com/jessfraz/dockerfiles).  It holds various dockerfiles 
-for tools I find useful.
+This repo was started from the excellent [dockerfiles](https://github.com/jessfraz/dockerfiles) of [@jessfraz](https://github.com/jessfraz).  
+It holds various dockerfiles for tools I find useful.
 
 **Table of Contents**
 
@@ -29,7 +28,7 @@ Any others which I haven't yet made any changes to probably still live under [je
 You might potentially find my [dotfiles](https://github.com/westonsteimel/dotfiles) to be useful.  Most of the commands 
 for launching the tools I use as docker containers live under [bin/](https://github.com/westonsteimel/dotfiles/blob/master/bin/).
 
-These were also inspired by [@jessfraz](https://github.com/jessfraz) [dotfiles](https://github.com/jessfraz/dotfiles)
+These were also inspired by the [dotfiles](https://github.com/jessfraz/dotfiles) of [@jessfraz](https://github.com/jessfraz)
 
 ## Contributing
 
