@@ -1,9 +1,11 @@
-FROM debian:buster-slim
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+FROM alpine:edge
 
-RUN apt-get update && apt-get install -y \
+RUN apk upgrade && apk add --no-cache \
 	nmap \
-	--no-install-recommends \
-	&& rm -rf /var/lib/apt/lists/*
+    nmap-scripts \
+    && rm -rf /var/cache \
+    && addgroup -g 1000 nmap \
+	&& adduser -u 1000 -G nmap -s /bin/sh -D nmap
 
-ENTRYPOINT [ "nmap" ]
+ENTRYPOINT ["nmap"]
+
