@@ -1,29 +1,36 @@
-FROM debian:buster-slim
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+# mitmproxy
+# docker run --rm -it -v ~/.mitmproxy:/home/mitmproxy/.mitmproxy -p 8080:8080 mitmproxy/mitmproxy
+#
+# mitmweb
+# docker run --rm -it -p 8080:8080 -p 127.0.0.1:8081:8081 mitmproxy/mitmproxy mitmweb --web-iface 0.0.0.0
+#
+
+FROM python:3-alpine
 
 ENV LANG=en_US.UTF-8
-
-RUN apt-get update && apt-get install -y \
-	ca-certificates \
-	curl \
-	--no-install-recommends \
-	&& rm -rf /var/lib/apt/lists/*
-
-# Add our user first to make sure the ID get assigned consistently,
-# regardless of whatever dependencies get added.
-RUN groupadd -r mitmproxy && useradd -r -g mitmproxy mitmproxy \
-    && mkdir -p /home/mitmproxy/.mitmproxy \
-	&& chown -R mitmproxy:mitmproxy /home/mitmproxy
-
-# Download the binaries.
 ENV MITMPROXY_VERSION 4.0.4
-RUN curl -sSL "https://snapshots.mitmproxy.org/${MITMPROXY_VERSION}/mitmproxy-${MITMPROXY_VERSION}-linux.tar.gz" | tar -vxzC /usr/local/bin
 
-VOLUME /home/mitmproxy/.mitmproxy
+RUN addgroup -g 1000 mitmproxy \
+    && adduser -u 1000 -G mitmproxy -D mitmproxy \
+    && apk --no-cache add \
+        ca-certificates \
+        libffi \
+        openssl \
+    && apk --no-cache add --virtual .build-dependencies \
+        build-base \
+        git \
+        libffi-dev \
+        openssl-dev \
+	&& git clone --branch="v${MITMPROXY_VERSION}" --depth=1 https://github.com/mitmproxy/mitmproxy \
+	&& cd mitmproxy \
+	&& python setup.py bdist_wheel \
+    && LDFAGS=-L/lib pip install --no-cache-dir dist/mitmproxy-${MITMPROXY_VERSION}-py3-none-any.whl \
+    && apk del --purge .build-dependencies \
+    && cd .. \
+    && rm -rf mitmproxy /var/cache/* \
 
-COPY docker-entrypoint.sh /usr/local/bin/
+USER mitmproxy
 
 EXPOSE 8080 8081
 
-ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["mitmproxy"]

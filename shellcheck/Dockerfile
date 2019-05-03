@@ -1,11 +1,13 @@
-FROM debian:buster-slim
+FROM koalaman/shellcheck-alpine as builder
 
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+FROM alpine:edge
 
-RUN apt-get update && apt-get install -y \
-	file \
-	shellcheck \
-	--no-install-recommends \
-	&& rm -rf /var/lib/apt/lists/*
+RUN apk --no-cache add \
+    file \
+    bash \
+    findutils \
+    grep
+
+COPY --from=builder /bin/shellcheck /bin/shellcheck
 
 CMD ["shellcheck"]

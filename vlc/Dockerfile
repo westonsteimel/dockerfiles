@@ -1,30 +1,40 @@
 # VLC media player
 #
-# docker run -d \
-#	-v /etc/localtime:/etc/localtime:ro \
-#	--device /dev/snd \
-#	--device /dev/dri \
-#	-v /tmp/.X11-unix:/tmp/.X11-unix \
-#	-e DISPLAY=unix$DISPLAY \
-#	--name vlc \
-#	jess/vlc
+#docker run --rm -d \
+#    -v /etc/localtime:/etc/localtime:ro \
+#    -v /etc/machine-id:/etc/machine-id:ro \
+#    -v /tmp/.X11-unix:/tmp/.X11-unix \
+#    -e "DISPLAY=unix${DISPLAY}" \
+#    -e GDK_SCALE \
+#    -e GDK_DPI_SCALE \
+#    -e QT_DEVICE_PIXEL_RATIO \
+#    --group-add audio \
+#    --group-add video \
+#    -v "${HOME}/Torrents:/home/vlc/Torrents" \
+#    --device /dev/dri \
+#    --device /dev/snd \
+#    --device /dev/video0 \
+#    --name vlc \
+#    "westonsteimel/vlc:alpine" "$@"
 #
-FROM debian:stretch-slim
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
 
-RUN apt-get update && apt-get install -y \
-	libgl1-mesa-dri \
-	libgl1-mesa-glx \
-	vlc \
-	--no-install-recommends \
-	&& rm -rf /var/lib/apt/lists/*
+FROM alpine:edge
 
-ENV HOME /home/vlc
-RUN useradd --create-home --home-dir $HOME vlc \
-	&& chown -R vlc:vlc $HOME \
-	&& usermod -a -G audio,video vlc
+RUN apk upgrade --no-cache && apk add --no-cache \
+    alsa-lib \
+    dbus-x11 \
+    mesa-dri-intel \
+	mesa-gl \
+    qt-x11 \
+	vlc-qt
 
-WORKDIR $HOME
+# Add vlc user
+RUN addgroup vlc \
+    && adduser -G vlc -D vlc \
+    && addgroup vlc audio \
+    && addgroup vlc video
+
+# Run vlc as non privileged user
 USER vlc
 
 ENTRYPOINT [ "vlc" ]
