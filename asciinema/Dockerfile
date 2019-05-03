@@ -5,8 +5,8 @@ ENV ASCIINEMA_VERSION 2.0.2
 RUN apk update && apk add --no-cache \
     ca-certificates \
     ncurses \
-    && addgroup -g 1000 asciinema \
-    && adduser -u 1000 -G asciinema -s /bin/sh -D asciinema
+    && addgroup asciinema \
+    && adduser -G asciinema -s /bin/sh -D asciinema
 
 USER asciinema
 ENV PATH "/home/asciinema/.local/bin:$PATH"

@@ -24,7 +24,8 @@ RUN apt-get update && apt-get install -y \
     && pip3 install --no-cache-dir "git+https://github.com/surfkansas/aws-ping-login@${AWS_PING_LOGIN_VERSION}" \
     && chmod a+x -R /usr/local/bin/ 
 
-RUN groupadd -g 1000 aws && useradd --create-home --no-log-init -u 1000 -g aws aws
+RUN groupadd aws \
+    && useradd --create-home --no-log-init -g aws aws
 
 USER aws
 
