@@ -2,12 +2,16 @@
 #
 # docker run --rm -it \
 # 	--pid host \
-# 	jess/htop
+# 	westonsteimel/htop
 #
-FROM alpine:latest
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+FROM alpine:edge
 
-RUN apk --no-cache add \
-	htop
+RUN apk upgrade && apk --no-cache add \
+	htop \
+    && rm -rf /var/cache \
+    && addgroup htop \
+    && adduser -G htop -s /bin/sh -D htop
+
+USER htop
 
 CMD [ "htop" ]
