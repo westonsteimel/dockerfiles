@@ -123,6 +123,7 @@ keybase/client
 stellarium/stellarium
 celestiaproject/celestia
 ytdl-org/youtube-dl
+jakubroztocil/httpie
 )
 
 other_projects=(
