@@ -13,6 +13,12 @@ FROM alpine:edge
 
 COPY --from=builder /usr/local/bin/rq /usr/local/bin/rq
 
-ENTRYPOINT ["rq"]
+RUN apk upgrade \
+    && rm -rf /var/cache/* \
+    && addgroup rq \
+	&& adduser -G rq -s /bin/sh -D rq
 
+USER rq
+
+ENTRYPOINT ["rq"]
 CMD ["--help"]

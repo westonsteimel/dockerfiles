@@ -10,8 +10,8 @@ FROM python:3-alpine
 ENV LANG=en_US.UTF-8
 ENV MITMPROXY_VERSION 4.0.4
 
-RUN addgroup -g 1000 mitmproxy \
-    && adduser -u 1000 -G mitmproxy -D mitmproxy \
+RUN addgroup mitmproxy \
+    && adduser -G mitmproxy -D mitmproxy \
     && apk --no-cache add \
         ca-certificates \
         libffi \
