@@ -104,7 +104,6 @@ compare() {
 projects=(
 iovisor/bcc
 browsh-org/browsh
-certbot/certbot
 hashicorp/consul
 curl/curl
 keepassxreboot/keepassxc
