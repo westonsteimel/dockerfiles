@@ -1,0 +1,3 @@
+[submodule "firefox"]
+	path = firefox
+	url = git@github.com:westonsteimel/docker-firefox.git
