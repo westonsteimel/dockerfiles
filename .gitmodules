@@ -1,3 +1,6 @@
 [submodule "firefox"]
 	path = firefox
 	url = git@github.com:westonsteimel/docker-firefox.git
+[submodule "stellarium"]
+	path = stellarium
+	url = git@github.com:westonsteimel/docker-stellarium.git
