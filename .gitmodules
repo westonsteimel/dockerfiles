@@ -4,3 +4,6 @@
 [submodule "stellarium"]
 	path = stellarium
 	url = git@github.com:westonsteimel/docker-stellarium.git
+[submodule "celestia"]
+	path = celestia
+	url = git@github.com:westonsteimel/docker-celestia.git
