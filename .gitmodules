@@ -7,3 +7,9 @@
 [submodule "celestia"]
 	path = celestia
 	url = git@github.com:westonsteimel/docker-celestia.git
+[submodule "curl"]
+	path = curl
+	url = git@github.com:westonsteimel/docker-curl.git
+[submodule "cmatrix"]
+	path = cmatrix
+	url = git@github.com:westonsteimel/docker-cmatrix.git
