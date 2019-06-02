@@ -13,3 +13,9 @@
 [submodule "cmatrix"]
 	path = cmatrix
 	url = git@github.com:westonsteimel/docker-cmatrix.git
+[submodule "keepassxc"]
+	path = keepassxc
+	url = git@github.com:westonsteimel/docker-keepassxc.git
+[submodule "ledger"]
+	path = ledger
+	url = git@github.com:westonsteimel/docker-ledger.git
