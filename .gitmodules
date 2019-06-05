@@ -19,3 +19,9 @@
 [submodule "ledger"]
 	path = ledger
 	url = git@github.com:westonsteimel/docker-ledger.git
+[submodule "bcc-tools"]
+	path = bcc-tools
+	url = git@github.com:westonsteimel/docker-bcc.git
+[submodule "kube-hunter"]
+	path = kube-hunter
+	url = git@github.com:westonsteimel/docker-kube-hunter.git
