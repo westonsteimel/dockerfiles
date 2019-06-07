@@ -25,3 +25,9 @@
 [submodule "kube-hunter"]
 	path = kube-hunter
 	url = git@github.com:westonsteimel/docker-kube-hunter.git
+[submodule "httpie"]
+	path = httpie
+	url = git@github.com:westonsteimel/docker-httpie.git
+[submodule "youtube-dl"]
+	path = youtube-dl
+	url = git@github.com:westonsteimel/docker-youtube-dl.git
