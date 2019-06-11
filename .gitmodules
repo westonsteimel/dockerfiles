@@ -31,3 +31,6 @@
 [submodule "youtube-dl"]
 	path = youtube-dl
 	url = git@github.com:westonsteimel/docker-youtube-dl.git
+[submodule "bcc"]
+	path = bcc
+	url = git@github.com:westonsteimel/docker-bcc.git
