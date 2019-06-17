@@ -34,3 +34,6 @@
 [submodule "bcc"]
 	path = bcc
 	url = git@github.com:westonsteimel/docker-bcc.git
+[submodule "tor-browser"]
+	path = tor-browser
+	url = git@github.com:westonsteimel/docker-tor-browser.git
