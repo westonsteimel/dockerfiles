@@ -24,9 +24,8 @@ RUN apk upgrade --no-cache && apk add --no-cache \
     alsa-lib \
     dbus-x11 \
     mesa-dri-intel \
-	mesa-gl \
-    qt-x11 \
-	vlc-qt
+    mesa-gl \
+    vlc-qt
 
 # Add vlc user
 RUN addgroup vlc \
