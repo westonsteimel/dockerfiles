@@ -37,3 +37,9 @@
 [submodule "tor-browser"]
 	path = tor-browser
 	url = git@github.com:westonsteimel/docker-tor-browser.git
+[submodule "amass"]
+	path = amass
+	url = https://github.com/westonsteimel/docker-amass
+[submodule "gobuster"]
+	path = gobuster
+	url = https://github.com/westonsteimel/docker-gobuster
