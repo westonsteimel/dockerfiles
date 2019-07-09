@@ -39,10 +39,10 @@
 	url = git@github.com:westonsteimel/docker-tor-browser.git
 [submodule "amass"]
 	path = amass
-	url = https://github.com/westonsteimel/docker-amass
+	url = git@github.com/westonsteimel/docker-amass.git
 [submodule "gobuster"]
 	path = gobuster
-	url = https://github.com/westonsteimel/docker-gobuster
+	url = git@github.com/westonsteimel/docker-gobuster.git
 [submodule "zaproxy"]
 	path = zaproxy
-	url = https://github.com/westonsteimel/docker-zaproxy
+	url = git@github.com/westonsteimel/docker-zaproxy.git
