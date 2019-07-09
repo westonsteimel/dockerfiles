@@ -43,3 +43,6 @@
 [submodule "gobuster"]
 	path = gobuster
 	url = https://github.com/westonsteimel/docker-gobuster
+[submodule "zaproxy"]
+	path = zaproxy
+	url = https://github.com/westonsteimel/docker-zaproxy

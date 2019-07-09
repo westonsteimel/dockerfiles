@@ -103,17 +103,10 @@ compare() {
 
 projects=(
 iovisor/bcc
-browsh-org/browsh
-hashicorp/consul
 curl/curl
 keepassxreboot/keepassxc
 robertdavidgraham/masscan
 mitmproxy/mitmproxy
-hashicorp/nomad
-hashicorp/packer
-hashicorp/terraform
-hashicorp/vagrant
-hashicorp/vault
 wireguard/wireguard
 OJ/gobuster
 OWASP/amass
@@ -123,6 +116,7 @@ stellarium/stellarium
 celestiaproject/celestia
 ytdl-org/youtube-dl
 jakubroztocil/httpie
+zaproxy/zaproxy
 )
 
 other_projects=(
