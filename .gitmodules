@@ -46,3 +46,6 @@
 [submodule "zaproxy"]
 	path = zaproxy
 	url = git@github.com/westonsteimel/docker-zaproxy.git
+[submodule "hugo"]
+	path = hugo
+	url = https://github.com/westonsteimel/docker-hugo
