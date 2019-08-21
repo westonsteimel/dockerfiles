@@ -18,7 +18,7 @@ FROM westonsteimel/debian:sid-slim
 
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
-ENV SLACK_VERSION 3.4.0
+ENV SLACK_VERSION 4.0.1
 
 RUN apt-get update \
     && apt-get install -y \
