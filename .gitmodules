@@ -49,3 +49,30 @@
 [submodule "hugo"]
 	path = hugo
 	url = https://github.com/westonsteimel/docker-hugo
+[submodule "bind-tools"]
+	path = bind-tools
+	url = git@github.com:westonsteimel/docker-bind-tools.git
+[submodule "htop"]
+	path = htop
+	url = git@github.com:westonsteimel/docker-htop.git
+[submodule "lynx"]
+	path = lynx
+	url = git@github.com:westonsteimel/docker-lynx.git
+[submodule "links"]
+	path = links
+	url = git@github.com:westonsteimel/docker-links.git
+[submodule "masscan"]
+	path = masscan
+	url = git@github.com:westonsteimel/docker-masscan.git
+[submodule "netcat"]
+	path = netcat
+	url = git@github.com:westonsteimel/docker-netcat.git
+[submodule "nmap"]
+	path = nmap
+	url = git@github.com:westonsteimel/docker-nmap.git
+[submodule "vlc"]
+	path = vlc
+	url = git@github.com:westonsteimel/docker-vlc.git
+[submodule "whois"]
+	path = whois
+	url = git@github.com:westonsteimel/docker-whois.git
