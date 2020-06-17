@@ -9,7 +9,7 @@
 #    --name vscode \
 #    westonsteimel/vscode
 
-FROM westonsteimel/debian:sid-slim
+FROM debian:sid-slim
 LABEL maintainer "Jessie Frazelle <jess@linux.com>"
 
 # Tell debconf to run in non-interactive mode
