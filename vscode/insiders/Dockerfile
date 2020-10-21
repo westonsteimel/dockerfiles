@@ -33,7 +33,8 @@ RUN apt-get update && apt-get -y install \
 	libatk1.0-0 \
 	libcairo2 \
 	libcups2 \
-	libexpat1 \
+	libdrm-dev \
+    libexpat1 \
 	libfontconfig1 \
 	libfreetype6 \
 	libgtk2.0-0 \
@@ -49,6 +50,7 @@ RUN apt-get update && apt-get -y install \
 	libxrender1 \
 	libxss1 \
 	libxtst6 \
+    libxcb-dri3-0 \
 	openssh-client \
     fonts-firacode \
 	--no-install-recommends \

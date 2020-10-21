@@ -49,7 +49,8 @@ RUN apt-get update && apt-get -y install \
 	libxrender1 \
 	libxss1 \
 	libxtst6 \
-	openssh-client \
+	libxcb-dri3-0 \
+    openssh-client \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
