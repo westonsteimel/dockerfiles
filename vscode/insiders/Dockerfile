@@ -51,6 +51,7 @@ RUN apt-get update && apt-get -y install \
 	libxss1 \
 	libxtst6 \
     libxcb-dri3-0 \
+    libxshmfence1 \
 	openssh-client \
     fonts-firacode \
 	--no-install-recommends \
